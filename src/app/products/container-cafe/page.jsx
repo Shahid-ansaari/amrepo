@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import axios from "axios";
 import { FaWhatsapp, FaPhone, FaChevronLeft, FaChevronRight, FaEye } from "react-icons/fa";
+import { toast } from "sonner";
 
 export default function PortableContainerCafePage() {
   const API_ENDPOINT = process.env.NEXT_PUBLIC_API_ENDPOINT || "http://localhost:4000/api/leads";
@@ -14,7 +15,7 @@ export default function PortableContainerCafePage() {
     subtitle: "Turn-key café setup designed for quick installation, business-ready interiors & modern branding.",
     mainImage: "/assets/products/cafe/cafe1.jpg",
     images: [
-      "/assets/products/cafe/cafe1.jpg",
+      "/assets/products/cafe/cafe2.jpg",
       "/assets/products/cafe/cafe2.jpg",
       "/assets/products/cafe/cafe3.jpg",
       "/assets/products/cafe/cafe4.jpg",
@@ -84,6 +85,7 @@ export default function PortableContainerCafePage() {
       setSuccess("Thank you — our team will contact you with pricing & options.");
       setForm({ fullName: "", phone: "", email: "", product: product.name, projectDetails: "" });
     } catch (err) {
+      toast.message("Something went wrong. Please try again or call us.")
       setError("Something went wrong. Please try again or call us.");
     } finally {
       setLoading(false);
@@ -133,14 +135,14 @@ export default function PortableContainerCafePage() {
 
         {zoom && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
-            <button onClick={() => setZoom(false)} className="absolute top-4 right-4 text-white bg-black/60 hover:bg-black px-3 py-1.5 rounded text-lg font-bold">✕ Close</button>
+            <button onClick={() => setZoom(false)} className="absolute top-18 right-4 text-white bg-black/60 hover:bg-black px-3 py-1.5 rounded text-lg font-bold">✕ Close</button>
             <div className="max-w-5xl w-full flex justify-center">
               <Image src={activeImage} alt="zoom" width={1600} height={1000} className="object-contain w-full max-h-[85vh]" />
             </div>
           </div>
         )}
 
-        <div className="mt-4 flex items-center gap-2">
+        <div className="mt-4  flex items-center gap-2">
           <button className="md:hidden bg-white shadow p-2 rounded-full" onClick={() => moveImage("left")}><FaChevronLeft size={14} /></button>
           <div className="flex gap-2 overflow-x-auto py-1">
             {product.images.map((img, i) => (
@@ -177,7 +179,7 @@ export default function PortableContainerCafePage() {
                 <h3 className="font-semibold">Structure</h3>
                 <ul className="list-disc pl-6">
                   <li>MS frame structure with weather-proof exterior</li>
-                  <li>PUF/EPS insulation for AC support</li>
+                  {/* <li>PUF/EPS insulation for AC support</li> */}
                   <li>Interior wall finish & LED lighting</li>
                 </ul>
                 <h3 className="font-semibold mt-2">Cafe Fitout</h3>
@@ -213,9 +215,9 @@ export default function PortableContainerCafePage() {
         </section>
 
         {/* ---- LEAD FORM ---- */}
-        <section className="mt-10 bg-white p-6 rounded max-w-3xl mx-auto">
+        <section className="mt-10 bg-white p-6 rounded max-w-xl mx-auto">
           <h2 className="text-2xl font-bold text-center">Get a Quote for Portable Container Café</h2>
-          <p className="text-center text-gray-700 mt-2">Share your requirement — interior type, size and branding — our team will provide price & delivery options.</p>
+          <p className="text-center text-gray-700 font-medium mt-2">Share your requirement, interior type, size and branding — our team will provide price & delivery options.</p>
 
           <form onSubmit={handleSubmit} className="mt-6 grid grid-cols-1 gap-4">
             <input type="text" required placeholder="Full name" className="border p-3 rounded" value={form.fullName} onChange={(e) => setForm({ ...form, fullName: e.target.value })} />
@@ -228,7 +230,7 @@ export default function PortableContainerCafePage() {
           </form>
         </section>
 
-        <p className="text-center mt-8 text-gray-700">Serving restaurants, startups and small business entrepreneurs across India — with installation and after-sales support.</p>
+        {/* <p className="text-center mt-8 text-gray-700">Serving restaurants, startups and small business entrepreneurs across India — with installation and after-sales support.</p> */}
       </div>
     </div>
   );

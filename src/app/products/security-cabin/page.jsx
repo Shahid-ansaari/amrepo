@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import axios from "axios";
 import { FaWhatsapp, FaPhone, FaChevronLeft, FaChevronRight, FaEye } from "react-icons/fa";
+import { toast } from "sonner";
 
 export default function SecurityGuardCabinPage() {
   const API_ENDPOINT = process.env.NEXT_PUBLIC_API_ENDPOINT || "http://localhost:4000/api/leads";
@@ -15,15 +16,17 @@ export default function SecurityGuardCabinPage() {
     mainImage: "/assets/products/security/gaurd5.png",
     images: [
       "/assets/products/security/gaurd2.jpg",
-      "/assets/products/security/security2.jpg",
-      "/assets/products/security/security3.jpg",
-      "/assets/products/security/security4.jpg",
-      "/assets/products/security/security5.jpg",
+      "/assets/products/security/security14.jpg",
+      "/assets/products/security/security9.jpg",
+      "/assets/products/security/security10.jpg",
+      "/assets/products/security/security11.jpg",
+      "/assets/products/security/security12.jpg",
+      
     ],
     features: [
       { feature: "Footprint", benefit: "4x4 ft, 6x6 ft, 8x6 ft — custom sizes available" },
       { feature: "Build", benefit: "Powder-coated MS frame + insulated panels" },
-      { feature: "Power", benefit: "Pre-wired with LED, sockets & AC provision" },
+      { feature: "Power", benefit: "Pre-wired with LED, sockets & AC provision on the basis of reqquirement." },
     ],
     highlights: [
       "Weatherproof and secure",
@@ -85,6 +88,7 @@ export default function SecurityGuardCabinPage() {
       setForm({ fullName: "", phone: "", email: "", product: product.name, projectDetails: "" });
     } catch (err) {
       console.error(err);
+      toast.message("Something went wrong. Try again or call us directly.")
       setError("Something went wrong. Try again or call us directly.");
     } finally {
       setLoading(false);
@@ -157,7 +161,7 @@ export default function SecurityGuardCabinPage() {
         {/* ZOOM MODAL */}
         {zoom && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4">
-            <button onClick={() => setZoom(false)} className="absolute top-6 right-6 bg-white px-3 py-1 rounded">Close ✕</button>
+            <button onClick={() => setZoom(false)} className="absolute top-18 right-6 bg-sky-800 text-white px-3 py-1 rounded">Close ✕</button>
             <div className="max-w-4xl w-full rounded overflow-hidden">
               <Image src={activeImage} alt="zoom" width={1600} height={1000} className="object-contain w-full h-[80vh]" />
             </div>
@@ -182,7 +186,7 @@ export default function SecurityGuardCabinPage() {
                   <li>Comfort provisions: lighting, ventilation & AC-ready</li>
                   <li>Customisable — paint, branding, counters & more</li>
                 </ul>
-                <p className="font-medium">Pain → Our clients were losing time and risking safety waiting for permanent structures. Solution → A ready cabin that ships fast and keeps people safe from Day 1. Trust → 100s installed across projects with long-term support.</p>
+                <p className="font-medium"> Our cabins are designed for swift shipping and provide safety from day one. With hundreds already installed across various projects, we offer ongoing support to ensure everything runs smoothly.</p>
               </div>
             )}
 
@@ -240,9 +244,9 @@ export default function SecurityGuardCabinPage() {
         </section>
 
         {/* LEAD FORM SECTION */}
-        <section className="mt-10 bg-white p-6 rounded max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-center">Interested in this Security Guard Cabin?</h2>
-          <p className="text-center text-gray-700 mt-2">Tell us briefly — our expert will suggest the right size and delivery timeline.</p>
+        <section className="mt-10 bg-white p-6 rounded max-w-xl mx-auto">
+          <h2 className="text-2xl font-bold text-center text-sky-900">Interested in this Security Guard Cabin?</h2>
+          <p className="text-center text-gray-700 mt-2 font-semibold">Tell us briefly — our expert will suggest the right size and delivery timeline.</p>
 
           <form onSubmit={handleSubmit} className="mt-6 grid grid-cols-1 gap-4">
             <input type="text" required placeholder="Full name" className="border p-3 rounded" value={form.fullName} onChange={(e) => setForm({ ...form, fullName: e.target.value })} />
@@ -263,13 +267,13 @@ export default function SecurityGuardCabinPage() {
             {success && <p className="text-green-600">{success}</p>}
             {error && <p className="text-red-600">{error}</p>}
 
-            <p className="text-sm text-gray-600">Or call us: <a href="tel:+919999999999" className="font-semibold">+91 99999 99999</a> — or message on WhatsApp.</p>
+            {/* <p className="text-sm bg-sky-50 py-2 px-2 font-semibold text-gray-600">Or call us: <a href="tel:+919999999999" className="font-semibold">+91 99999 99999</a> or message on WhatsApp.</p> */}
           </form>
         </section>
 
         {/* TRUST / CTA */}
         <section className="mt-8 text-center">
-          <p className="text-gray-700">Trusted by site supervisors & security teams — backed by on-ground support and spare-part availability.</p>
+          <p className="text-gray-700">Trusted by site supervisors & security teams, backed by on-ground support and spare-part availability.</p>
         </section>
 
       </div>

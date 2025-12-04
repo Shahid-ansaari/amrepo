@@ -5,22 +5,21 @@ import Image from "next/image";
 import Link from "next/link";
 import axios from "axios";
 import { FaWhatsapp, FaPhone, FaChevronLeft, FaChevronRight, FaEye } from "react-icons/fa";
-import { toast } from "sonner";
 
-export default function PortableCabinsPage() {
+export default function FarmHousePage() {
   const API_ENDPOINT = process.env.NEXT_PUBLIC_API_ENDPOINT || "http://localhost:4000/api/leads";
 
   const product = {
     name: "Portable Cabins",
-    subtitle: "Flexible, durable cabins",
+    subtitle: "Flexible, durable cabins — ready for offices, security rooms, shops, sites and more.",
     mainImage: "/assets/products/cabin/cabin3.jpg",
     images: [
-      "/assets/products/cabin/cabin2.jpg",
-      "/assets/hero/modular homes.jpg",
-      "/assets/hero/products/cabins/cabinp1.jpg",
-      "/assets/products/cabin/cabin-interior1.jpg",
-      "/assets/products/cabin/cabin-10.jpg",
-      "/assets/products/cabin/pink-cabin.jpg",
+      "/assets/products/portable/portable1.jpg",
+      "/assets/products/portable/portable2.jpg",
+      "/assets/products/portable/portable3.jpg",
+      "/assets/products/portable/portable4.jpg",
+      "/assets/products/portable/portable5.jpg",
+      "/assets/products/portable/portable6.jpg",
     ],
     features: [
       { feature: "Sizes", benefit: "Custom ranges: 6x4, 8x6, 10x10 and bespoke options" },
@@ -87,7 +86,6 @@ export default function PortableCabinsPage() {
       setForm({ fullName: "", phone: "", email: "", product: product.name, projectDetails: "" });
     } catch (err) {
       console.error(err);
-      toast.message("Something went wrong. Please try again or call us directly")
       setError("Something went wrong. Please try again or call us directly.");
     } finally {
       setLoading(false);
@@ -257,9 +255,9 @@ export default function PortableCabinsPage() {
         </section>
 
         {/* LEAD FORM SECTION */}
-        <section className="mt-10 bg-white p-6 rounded max-w-xl mx-auto">
-          <h2 className="text-2xl font-bold text-center text-sky-900">Get a quote for Portable Cabins</h2>
-          <p className="text-center text-gray-700 mt-2 font-medium">Tell us your use-case and size,  our expert will respond with options and a delivery estimate.</p>
+        <section className="mt-10 bg-white p-6 rounded max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold text-center">Get a quote for Portable Cabins</h2>
+          <p className="text-center text-gray-700 mt-2">Tell us your use-case and size — our expert will respond with options and a delivery estimate.</p>
 
           <form onSubmit={handleSubmit} className="mt-6 grid grid-cols-1 gap-4">
             <input type="text" required placeholder="Full name" className="border p-3 rounded" value={form.fullName} onChange={(e) => setForm({ ...form, fullName: e.target.value })} />
@@ -278,15 +276,15 @@ export default function PortableCabinsPage() {
             <button type="submit" disabled={loading} className="bg-sky-700 text-white py-3 rounded font-semibold">{loading ? "Sending..." : "Request Quote"}</button>
 
             {success && <p className="text-green-600">{success}</p>}
-            {error && <p className="text-red-600 font-medium">{error}</p>}
+            {error && <p className="text-red-600">{error}</p>}
 
-            {/* <p className="text-sm text-gray-600">Or call us: <a href="tel:+919999999999" className="font-semibold">+91 99999 99999</a> — or message on WhatsApp.</p> */}
+            <p className="text-sm text-gray-600">Or call us: <a href="tel:+919999999999" className="font-semibold">+91 99999 99999</a> — or message on WhatsApp.</p>
           </form>
         </section>
 
         {/* TRUST */}
         <section className="mt-8 text-center">
-          {/* <p className="text-gray-700">Trusted by businesses, farms and site managers — backed by nationwide logistics and spare-part support.</p> */}
+          <p className="text-gray-700">Trusted by businesses, farms and site managers — backed by nationwide logistics and spare-part support.</p>
         </section>
 
       </div>

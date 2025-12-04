@@ -173,7 +173,7 @@ export default function AccommodationCabinPage() {
                   <li>Insulated panels for all-season comfort</li>
                   <li>Modular design — expand, relocate, or repurpose easily</li>
                 </ul>
-                <p className="font-medium">Pain → Traditional housing is slow and expensive. Solution → Accommodation cabins give instant comfort at lower cost. Trust → Used across industrial sites, farms, and remote locations with after-sales support.</p>
+                <p className="font-medium">Traditional housing is slow and expensive. Accommodation cabins give instant comfort at lower cost. Used across industrial sites, farms, and remote locations with after-sales support.</p>
               </div>
             )}
             {activeTab==="specs" && (
@@ -181,7 +181,7 @@ export default function AccommodationCabinPage() {
                 <h3 className="font-semibold">Structure</h3>
                 <ul className="list-disc pl-6">
                   <li>Galvanized steel frame with anti-corrosion finish</li>
-                  <li>PUF/EPS insulated panels</li>
+                  {/* <li>PUF/EPS insulated panels</li> */}
                   <li>Various floor finishes: vinyl, tile, wood-look</li>
                 </ul>
                 <h3 className="font-semibold mt-2">Fitout</h3>
@@ -227,7 +227,7 @@ export default function AccommodationCabinPage() {
         </section>
 
         {/* LEAD FORM */}
-        <section className="mt-10 bg-white p-6 rounded max-w-3xl mx-auto">
+        <section className="mt-10 bg-white p-6 rounded max-w-xl mx-auto">
           <h2 className="text-2xl font-bold text-center">Get a quote for Accommodation Cabin</h2>
           <p className="text-center text-gray-700 mt-2">Share your requirements — size, interior, number of cabins — and we’ll respond with options and pricing.</p>
 
@@ -250,7 +250,7 @@ export default function AccommodationCabinPage() {
             {success && <p className="text-green-600">{success}</p>}
             {error && <p className="text-red-600">{error}</p>}
 
-            <p className="text-sm text-gray-600">Or call us: <a href="tel:+919999999999" className="font-semibold">+91 99999 99999</a> — or message on WhatsApp.</p>
+            {/* <p className="text-sm text-gray-600">Or call us: <a href="tel:+919999999999" className="font-semibold">+91 99999 99999</a> — or message on WhatsApp.</p> */}
           </form>
         </section>
 

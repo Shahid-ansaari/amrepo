@@ -37,6 +37,7 @@ import { FaWhatsapp, FaPhone, FaChevronLeft, FaChevronRight, FaEye } from "react
 import Link from "next/link";
 import { Eye } from "lucide-react";
 import { useEffect } from "react";
+import ContactPage from "@/components/ContactForm";
 // import { Phone, ChevronLeft , ChevronRight  } from 'lucide-react';
 // <ChevronLeft />
 
@@ -380,6 +381,8 @@ export default function ProductPage() {
           </a>
         </div>
       </section>
+
+      <ContactPage/>
 
     </div>
   );

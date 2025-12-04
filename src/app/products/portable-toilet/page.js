@@ -15,10 +15,10 @@ export default function PortableToiletPage() {
     mainImage: "/assets/products/toilets/toilet2.jpg",
     images: [
       "/assets/products/portable-toilet/toilet1.jpg",
-      "/assets/products/portable-toilet/toilet2.jpg",
-      "/assets/products/portable-toilet/toilet3.jpg",
+      "/assets/products/toilets/toilet3.jpg",
+      "/assets/products/toilets/Portable Office toilet.jpg",
       "/assets/products/portable-toilet/toilet4.jpg",
-      "/assets/products/portable-toilet/toilet5.jpg",
+      "/assets/products/toilets/toilet5.jpg",
       "/assets/products/portable-toilet/toilet6.jpg",
     ],
     features: [
@@ -133,7 +133,7 @@ export default function PortableToiletPage() {
 
         {zoom && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
-            <button onClick={() => setZoom(false)} className="absolute top-4 right-4 text-white bg-black/60 hover:bg-black px-3 py-1.5 rounded text-lg font-bold">✕ Close</button>
+            <button onClick={() => setZoom(false)} className="absolute top-18 right-4 text-white bg-black/60 hover:bg-black px-3 py-1.5 rounded text-lg font-bold">✕ Close</button>
             <div className="max-w-5xl w-full flex justify-center">
               <Image src={activeImage} alt="zoom" width={1600} height={1000} className="object-contain w-full max-h-[85vh]" />
             </div>
@@ -177,7 +177,7 @@ export default function PortableToiletPage() {
                 <h3 className="font-semibold">Structure</h3>
                 <ul className="list-disc pl-6">
                   <li>MS frame with anti-corrosion finish</li>
-                  <li>PUF/EPS insulated walls for ventilation support</li>
+                  {/* <li>PUF/EPS insulated walls for ventilation support</li> */}
                   <li>Durable plastic or composite flooring</li>
                 </ul>
                 <h3 className="font-semibold mt-2">Fitout</h3>
@@ -213,7 +213,7 @@ export default function PortableToiletPage() {
         </section>
 
         {/* ---- LEAD FORM ---- */}
-        <section className="mt-10 bg-white p-6 rounded max-w-3xl mx-auto">
+        <section className="mt-10 bg-white p-6 rounded max-w-xl mx-auto">
           <h2 className="text-2xl font-bold text-center">Get a Quote for Portable Toilet</h2>
           <p className="text-center text-gray-700 mt-2">Share your requirement — size, quantity, and location — our team will provide price & delivery options.</p>
 
@@ -228,7 +228,7 @@ export default function PortableToiletPage() {
           </form>
         </section>
 
-        <p className="text-center mt-8 text-gray-700">Used by construction sites, events, and public facilities across India — fast deployment & maintenance support.</p>
+        {/* <p className="text-center mt-8 text-gray-700">Used by construction sites, events, and public facilities across India — fast deployment & maintenance support.</p> */}
       </div>
     </div>
   );
