@@ -152,7 +152,7 @@ import { Phone, Mail, ArrowRight, Menu, X } from "lucide-react";
 import MobileMenu from "./MobileMenu";
 import Image from "next/image";
 
-const phoneNumber = "919876543210";
+const phoneNumber = "9266722472";
 const whatsappURL = `https://wa.me/${phoneNumber}`;
 
 export default function Navbar() {
@@ -222,9 +222,9 @@ export default function Navbar() {
 
         {/* RIGHT ZONE DESKTOP */}
         <div className="hidden md:flex items-center gap-4 ml-3 text-white text-sm font-medium">
-          <a href="tel:+919876543210" className="flex items-center gap-1 whitespace-nowrap">
+          <a href="tel:+919266722472" className="flex items-center gap-1 whitespace-nowrap">
             <Phone size={18} className="text-blue-950" />
-            <span className=" hidden lg:block  font-semibold text-sky-950">+91 98765 43210</span>
+            <span className=" hidden lg:block  font-semibold text-sky-950">+91 9266722472</span>
           </a>
 
           <a href={whatsappURL} className="flex items-center">
@@ -249,9 +249,9 @@ export default function Navbar() {
 
           </a>
 
-          <a href="mailto:info@mircabins.in" className="flex items-center gap-1">
+          <a href="mailto:info@amofficegroup.in" className="flex items-center gap-1">
             <Mail size={20} className="text-sky-950" />
-            <span className=" text-sky-950 font-semibold"> dl@amoffice.co.in</span>
+            <span className=" text-sky-950 font-semibold"> info@amofficegroup.in</span>
           </a>
 
           <Link
@@ -265,7 +265,7 @@ export default function Navbar() {
 
         {/* MOBILE */}
         <div className="md:hidden flex items-center gap-5 text-white">
-          <a href="tel:+919876543210">
+          <a href="tel:+919266722472">
             <Phone size={22}  className="text-sky-950 " />
           </a>
 

@@ -186,7 +186,7 @@ export default function HeroSection() {
                 <ArrowRight size={16}/>
               </Link>
               <Link
-                href="tel:+919876543210"
+                href="tel:+919266722472"
                 className=" flex items-center shadow-inner  shadow-lg  justify-center gap-2 border border-[#d6e9ff] hover:border-white sm:bg-[#040c2977] hover:bg-[#050028] hover:scale-105 px-6 py-1 rounded-md text-lg font-semibold transition-all"
               >
                 <span className=""><Phone size={15} /></span> Call Now

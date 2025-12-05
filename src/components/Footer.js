@@ -28,7 +28,7 @@ export default function Footer() {
             <li><Link href="/products/security-cabin" className="hover:text-white transition">Security Cabin</Link></li>
             <li><Link href="/products/portable-cabin" className="hover:text-white transition">Portable Cabin</Link></li>
             <li><Link href="/products/container-cafe" className="hover:text-white transition">Container Café</Link></li>
-            <li><Link href="/products/accommodation-cabin" className="hover:text-white transition">Accommodation Cabin</Link></li>
+            <li><Link href="/products/accommodation" className="hover:text-white transition">Accommodation Cabin</Link></li>
             <li><Link href="/products/portable-toilet" className="hover:text-white transition">Portable Toilet</Link></li>
           </ul>
         </div>
@@ -44,22 +44,22 @@ export default function Footer() {
 
             <li className="flex items-center gap-3">
               <Phone className="w-5 h-5 text-gray-400" />
-              <a href="tel:+919999999999" className="hover:text-white transition">
-                +91 99999 99999
+              <a href="tel:+919266722472" className="hover:text-white transition">
+                +91 9266722472
               </a>
             </li>
 
             <li className="flex items-center gap-3">
               <MessageCircle className="w-5 h-5 text-gray-400" />
-              <a href="https://wa.me/919999999999" className="hover:text-white transition">
+              <a href="https://wa.me/9266722472" className="hover:text-white transition">
                 WhatsApp Us
               </a>
             </li>
 
             <li className="flex items-center gap-3">
               <Mail className="w-5 h-5 text-gray-400" />
-              <a href="mailto:info@amofficesolutions.com" className="hover:text-white transition">
-                info@amofficesolutions.com
+              <a href="mailto:info@amofficegroup.com" className="hover:text-white transition">
+                info@amofficegroup.com
               </a>
             </li>
           </ul>

@@ -221,15 +221,15 @@ export default function MobileMenu({ onClose }) {
         <div className="mt-4 p-4 bg-[#ebf4ff] rounded-xl shadow-sm border border-sky-800">
           <h3 className="text-lg font-bold text-sky-900 mb-3">Contact Us</h3>
 
-          <a href="tel:+919876543210" className="contact-item  font-medium">
-            <Phone size={20} /> +91 98765 43210
+          <a href="tel:+919266722472" className="contact-item  font-medium">
+            <Phone size={20} /> +91 9266722472
           </a>
 
           <a href="mailto:dl@amoffice.co.in" className="contact-item font-medium">
-            <Mail size={20} /> dl@amoffice.co.in
+            <Mail size={20} /> info@amofficegroup.in
           </a>
 
-          <a href="https://wa.me/919876543210" className="contact-item font-medium">
+          <a href="https://wa.me/9266722472" className="contact-item font-medium">
             <MessageCircle size={20} /> WhatsApp Chat
           </a>
 

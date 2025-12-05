@@ -9,8 +9,8 @@ import { motion } from "framer-motion";
  * Replace PHONE and WHATSAPP variables with your numbers.
  */
 
-const PHONE = "+919876543210"; // replace with your number (international format)
-const WHATSAPP = "919876543210"; // number used in wa.me (no +, no spaces)
+const PHONE = "+919266722472"; // replace with your number (international format)
+const WHATSAPP = "9266722472"; // number used in wa.me (no +, no spaces)
 
 export default function ConnectWithUs({
   title = "Connect with us",

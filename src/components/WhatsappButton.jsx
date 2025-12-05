@@ -2,7 +2,7 @@ import React from "react";
 
 export default function WhatsappButton() {
   // Replace with your WhatsApp Business number in international format (no + or 00)
-  const phoneNumber = "919876543210"; // Example: India +91 98765 43210
+  const phoneNumber = "9266722472"; // Example: India +91 98765 43210
 
   // WhatsApp URL (works on desktop & mobile)
   const whatsappURL = `https://wa.me/${phoneNumber}`;
