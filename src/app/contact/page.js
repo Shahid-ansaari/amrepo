@@ -309,7 +309,7 @@ export default function ContactPage() {
     setLoading(true);
 
     try {
-      await axios.post("http://localhost:4000/api/leads", form, {
+      await axios.post("https://am-backend-2968.onrender.com/api/leads", form, {
         headers: { "Content-Type": "application/json" },
       });
 
@@ -355,7 +355,7 @@ export default function ContactPage() {
                 <Input
                   id="fullName"
                   type="text"
-                  placeholder="John Doe"
+                  placeholder="full name"
                   required
                   value={form.fullName}
                   onChange={(e) => setForm({ ...form, fullName: e.target.value })}
