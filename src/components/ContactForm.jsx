@@ -481,7 +481,7 @@ export default function ContactPage() {
               <Input
                 id="fullName"
                 type="text"
-                placeholder="John Doe"
+                placeholder="your name"
                 required
                 value={form.fullName}
                 onChange={(e) => setForm({ ...form, fullName: e.target.value })}

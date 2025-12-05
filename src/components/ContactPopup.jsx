@@ -109,7 +109,7 @@ export default function ContactPopup() {
                             <Label>Full Name</Label>
                             <Input
                                 type="text"
-                                placeholder="John Doe"
+                                placeholder="full name"
                                 required
                                 value={form.fullName}
                                 onChange={(e) => setForm({ ...form, fullName: e.target.value })}
