@@ -59,14 +59,14 @@ const BOT_RESPONSES = {
 
   "how can i get pricing?": [
     { type: "text", content: "You can contact us for pricing and quotations anytime:" },
-    { type: "link", content: "📞 Call: +91 9876543210", href: "tel:+919266722472", color: "indigo-600" },
+    { type: "link", content: "📞 Call: +91 9266722472", href: "tel:+919266722472", color: "indigo-600" },
     { type: "link", content: "💬 WhatsApp: Chat on WhatsApp", href: "https://wa.me/9266722472", color: "green-600" },
-    { type: "link", content: "📩 Email: info@amofficesolutions.com", href: "mailto:info@amofficegroup.in", color: "blue-600" },
+    { type: "link", content: "📩 Email: info@amofficegroup.in", href: "mailto:info@amofficegroup.in", color: "blue-600" },
     { type: "link", content: "🌐 Contact Page", href: "/contact", color: "indigo-600" }
   ],
   "how can i contact you?": [
     { type: "text", content: "Contact Us:" },
-    { type: "link", content: "Phone: +91 7355256667", href: "tel:+919266722472", color: "indigo-600" },
+    { type: "link", content: "Phone: +91 9266722472", href: "tel:+919266722472", color: "indigo-600" },
     { type: "link", content: "WhatsApp: Chat on WhatsApp", href: "https://wa.me/9266722472", color: "green-600" },
     { type: "link", content: "Contact Page", href: "/contact", color: "indigo-600" }
   ],
