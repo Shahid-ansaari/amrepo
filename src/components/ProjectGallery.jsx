@@ -17,7 +17,7 @@ const CATEGORIES = [
 const IMAGES = [
     { id: 1, category: "Portable Office", src: "/assets/products/office/office6.jpg", alt: "Portable Office 1" },
     { id: 2, category: "Portable Office", src: "/assets/products/office/office1.jpg", alt: "Portable Office 2" },
-    { id: 3, category: "Security Cabin", src: "/assets/products/security/gaurd5.png", alt: "Security Cabin 1" },
+    { id: 3, category: "Security Cabin", src: "/assets/products/security/gaurd5.png", alt: "Security Cabin 1" }, 
     { id: 4, category: "Security Cabin", src: "/assets/products/security/security9.jpg", alt: "Security Cabin 2" },
     { id: 5, category: "Portable Cabin", src: "/assets/products/cabin/cabin2.jpg", alt: "Portable Cabin 1" },
     { id: 6, category: "Portable Cabin", src: "/assets/products/cabin/cabin1.jpg", alt: "Portable Cabin 2" },
@@ -27,6 +27,10 @@ const IMAGES = [
     { id: 8, category: "Container Café", src: "/examples/cafe-2.jpg", alt: "Container Café 2" },
     { id: 11, category: "Portable Toilet", src: "/examples/toilet-1.jpg", alt: "Portable Toilet 1" },
     { id: 10, category: "Accommodation Cabin", src: "/assets/products/accomondation/accommodation4.jpeg", alt: "Accommodation Cabin 2" },
+    { id: 14, category: "Security Cabin", src: "/assets/products/security/security-cabin-062025.jpg", alt: "Security Cabin 1" }, 
+    { id: 15, category: "Security Cabin", src: "/assets/products/security/security-cabin 062025-2.jpg", alt: "Security Cabin 1" },
+    
+    
 ];
 
 export default function ProjectGallery() {

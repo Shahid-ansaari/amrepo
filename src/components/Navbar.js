@@ -190,7 +190,7 @@ export default function Navbar() {
           href="/"
           className="md:hidden lg:block text-2xl md:text-3xl font-bold  tracking-wide"
         >
-          <Image src={"/assets/logo.png"} alt="AM Office " width={1000} height={1000} className=" w-40"></Image>
+          <Image src={"/logo.png"} alt="AM Office " width={1000} height={1000} className=" w-40"></Image>
         </Link>
 
         {/* DESKTOP MENU */}
@@ -249,9 +249,9 @@ export default function Navbar() {
 
           </a>
 
-          <a href="mailto:info@amofficegroup.in" className="flex items-center gap-1">
+          <a href="mailto:info@amoffices.in" className="flex items-center gap-1">
             <Mail size={20} className="text-sky-950" />
-            <span className=" text-sky-950 font-semibold"> info@amofficegroup.in</span>
+            <span className=" text-sky-950 font-semibold"> info@amoffices.in</span>
           </a>
 
           <Link

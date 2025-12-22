@@ -344,6 +344,15 @@ export default function ContactPage() {
 
           {/* Right Form */}
           <div className="w-full md:w-1/2 p-8 flex flex-col justify-center">
+          <div   className=" flex ">
+            <Image
+             width={1000}
+              height={1000}
+              src="/logo.png"
+              alt="Contact Illustration"
+              className="object-cover  w-40 "/>
+
+          </div>
             <h2 className="text-3xl font-bold mb-3 text-sky-900">Contact / Get a Quote</h2>
             <p className="text-gray-600 mb-6">Share your requirements and we’ll respond with options and pricing.</p>
 

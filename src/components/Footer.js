@@ -58,8 +58,8 @@ export default function Footer() {
 
             <li className="flex items-center gap-3">
               <Mail className="w-5 h-5 text-gray-400" />
-              <a href="mailto:info@amofficegroup.com" className="hover:text-white transition">
-                info@amofficegroup.com
+              <a href="mailto:info@amoffices.in" className="hover:text-white transition">
+                info@amoffices.in
               </a>
             </li>
           </ul>
@@ -87,16 +87,16 @@ export default function Footer() {
       <div className=" border-t border-sky-900">
 
         <div className=" flex-col-reverse w-9/12 m-auto flex sm:flex-col md:flex-row justify-between  mt-5 pt-3 text-center text-gray-400 text-sm">
-          <div>
+          <div className=" m-auto">
 
           © {new Date().getFullYear()} AM Office Solutions. All Rights Reserved.
           </div>
-          <div className=" flex gap-4 ">
+          {/* <div className=" flex gap-4 ">
             <Link href={"#"}>Privacy Policy</Link>
             <Link href={"#"}>Terms and Conditions</Link>
             <Link href={"#"}>Delivery Policy</Link>
             <Link href={"#"}>Refund Policy</Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

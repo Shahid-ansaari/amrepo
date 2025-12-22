@@ -103,7 +103,7 @@ import { Phone, Mail } from "lucide-react";
 export default function ContactButtons() {
   const whatsappNumber = "9266722472";
   const phoneNumber = "9266722472";
-  const emailAddress = "info@amofficegroup.in.com";
+  const emailAddress = "info@amoffices.in";
 
   const whatsappURL = `https://wa.me/${whatsappNumber}`;
   const phoneURL = `tel:${phoneNumber}`;

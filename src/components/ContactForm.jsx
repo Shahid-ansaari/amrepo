@@ -27,7 +27,7 @@
 
 //   return (
 //     <div className="max-w-4xl  my-10 mx-auto bg-white rounded-2xl shadow-xl p-6 md:p-10 grid md:grid-cols-2 gap-6">
-      
+
 //       {/* Optional Illustration */}
 //       <div className="hidden md:flex items-center  flex-col justify-center">
 //         <Image width={1000} height={1000} src="/assets/hero/b.jpg" alt="Contact illustration" className="w-full h-auto object-cover" />
@@ -285,7 +285,7 @@
 //     <div className="bg-sky-50 min-h-screen flex items-center justify-center p-4">
 //       <Toaster position="top-right">
 //         <div className="flex flex-col md:flex-row bg-white rounded-xl shadow-xl max-w-5xl w-full overflow-hidden">
-          
+
 //           {/* Left side illustration */}
 //           <div className="hidden md:block md:w-1/2 relative">
 //             <img
@@ -451,121 +451,127 @@ export default function ContactPage() {
 
   return (
     <div>
-    <div className="bg-sky-100 min-h-screen flex items-center justify-center p-4">
-      {/* Sonner Toaster */}
-      <Toaster position="top-right" richColors closeButton />
+      <div className="bg-sky-100 min-h-screen flex items-center justify-center p-4">
+        {/* Sonner Toaster */}
+        <Toaster position="top-right" richColors closeButton />
 
-      <div className="flex flex-col md:flex-row bg-white rounded-xl shadow-xl max-w-5xl w-full overflow-hidden">
-        
-        {/* Left Illustration */}
-        <div className="hidden md:block md:w-1/2 relative">
-          <Image
-          width={1000}
-          height={1000}
-            src="/assets/hero/a.jpg"
-            alt="Contact Illustration"
-            className="object-cover w-full h-full"
-          />
-        </div>
+        <div className="flex flex-col md:flex-row bg-white rounded-xl shadow-xl max-w-5xl w-full overflow-hidden">
 
-        {/* Right Form */}
-        <div className="w-full md:w-1/2 p-8 flex flex-col justify-center">
-          <h2 className="text-3xl font-bold mb-3 text-sky-900">Contact / Get a Quote</h2>
-          <p className="text-gray-600 mb-6">Share your requirements and we’ll respond with options and pricing.</p>
+          {/* Left Illustration */}
+          <div className="hidden md:block md:w-1/2 relative">
+            <Image
+              width={1000}
+              height={1000}
+              src="/assets/hero/a.jpg"
+              alt="Contact Illustration"
+              className="object-cover w-full h-full"
+            />
+          </div>
 
-          <form onSubmit={handleSubmit} className="space-y-5">
+          {/* Right Form */}
+          <div className="w-full md:w-1/2 p-8 flex flex-col justify-center">
+            <Image
+              width={1000}
+              height={1000}
+              src="/logo.png"
+              alt="Contact Illustration"
+              className="object-cover  w-40  m-auto py-" />
+            <h2 className="text-2xl font-bold mb-3 text-sky-900">Contact / Get a Quote</h2>
+            <p className="text-gray-600 mb-6">Share your requirements and we’ll respond with options and pricing.</p>
 
-            {/* Full Name */}
-            <div className="relative">
-              <Label htmlFor="fullName">Full Name</Label>
-              <Input
-                id="fullName"
-                type="text"
-                placeholder="your name"
-                required
-                value={form.fullName}
-                onChange={(e) => setForm({ ...form, fullName: e.target.value })}
-                className="pl-10"
-              />
-              <span className="absolute left-3 top-5 text-gray-400">👤</span>
-            </div>
+            <form onSubmit={handleSubmit} className="space-y-5">
 
-            {/* Phone */}
-            <div className="relative">
-              <Label htmlFor="phone">Phone</Label>
-              <Input
-                id="phone"
-                type="tel"
-                placeholder="+91 99999 99999"
-                required
-                value={form.phone}
-                onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                className="pl-10"
-              />
-              <span className="absolute left-3 top-5 text-gray-400">📞</span>
-            </div>
+              {/* Full Name */}
+              <div className="relative">
+                <Label htmlFor="fullName">Full Name</Label>
+                <Input
+                  id="fullName"
+                  type="text"
+                  placeholder="your name"
+                  required
+                  value={form.fullName}
+                  onChange={(e) => setForm({ ...form, fullName: e.target.value })}
+                  className="pl-10"
+                />
+                <span className="absolute left-3 top-5 text-gray-400">👤</span>
+              </div>
 
-            {/* Email */}
-            <div className="relative">
-              <Label htmlFor="email">Email (optional)</Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="example@mail.com"
-                value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
-                className="pl-10"
-              />
-              <span className="absolute left-3 top-5 text-gray-400">✉️</span>
-            </div>
+              {/* Phone */}
+              <div className="relative">
+                <Label htmlFor="phone">Phone</Label>
+                <Input
+                  id="phone"
+                  type="tel"
+                  placeholder="+91 99999 99999"
+                  required
+                  value={form.phone}
+                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                  className="pl-10"
+                />
+                <span className="absolute left-3 top-5 text-gray-400">📞</span>
+              </div>
 
-            {/* Product Select */}
-            <div>
-              <Label htmlFor="product">Select Product</Label>
-              <Select
-                value={form.product}
-                onValueChange={(val) => setForm({ ...form, product: val })}
+              {/* Email */}
+              <div className="relative">
+                <Label htmlFor="email">Email (optional)</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="example@mail.com"
+                  value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
+                  className="pl-10"
+                />
+                <span className="absolute left-3 top-5 text-gray-400">✉️</span>
+              </div>
+
+              {/* Product Select */}
+              <div>
+                <Label htmlFor="product">Select Product</Label>
+                <Select
+                  value={form.product}
+                  onValueChange={(val) => setForm({ ...form, product: val })}
+                >
+                  <SelectTrigger id="product" className="w-full">
+                    <SelectValue placeholder="Choose a product" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="Portable Office Cabin">Portable Office Cabin</SelectItem>
+                    <SelectItem value="Security Guard Cabin">Security Guard Cabin</SelectItem>
+                    <SelectItem value="Portable Cafe ">Portable Cafe </SelectItem>
+                    <SelectItem value="Portable Toilet ">Portable Toilet </SelectItem>
+                    <SelectItem value="Prefab House">Prefab House</SelectItem>
+                    <SelectItem value="Accomondation">Prefab Accomondation</SelectItem>
+                    <SelectItem value="Labor Colony">Labor Colony </SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              {/* Project Details */}
+              <div>
+                <Label htmlFor="projectDetails">Project Details (optional)</Label>
+                <textarea
+                  id="projectDetails"
+                  rows="4"
+                  placeholder="Provide any specific requirements"
+                  className="border rounded-md p-3 w-full focus:ring-2 focus:ring-sky-400 transition"
+                  value={form.projectDetails}
+                  onChange={(e) => setForm({ ...form, projectDetails: e.target.value })}
+                />
+              </div>
+
+              {/* Submit Button */}
+              <Button
+                type="submit"
+                disabled={loading}
+                className="w-full bg-gradient-to-r from-blue-500 to-sky-600 hover:from-blue-600 hover:to-sky-700 text-white flex items-center justify-center gap-2"
               >
-                <SelectTrigger id="product" className="w-full">
-                  <SelectValue placeholder="Choose a product" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="Portable Office Cabin">Portable Office Cabin</SelectItem>
-                  <SelectItem value="Security Guard Cabin">Security Guard Cabin</SelectItem>
-                  <SelectItem value="Portable Cafe ">Portable Cafe </SelectItem>
-                  <SelectItem value="Portable Toilet ">Portable Toilet </SelectItem>
-                  <SelectItem value="Prefab House">Prefab House</SelectItem>
-                  <SelectItem value="Accomondation">Prefab Accomondation</SelectItem>
-                  <SelectItem value="Labor Colony">Labor Colony </SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            {/* Project Details */}
-            <div>
-              <Label htmlFor="projectDetails">Project Details (optional)</Label>
-              <textarea
-                id="projectDetails"
-                rows="4"
-                placeholder="Provide any specific requirements"
-                className="border rounded-md p-3 w-full focus:ring-2 focus:ring-sky-400 transition"
-                value={form.projectDetails}
-                onChange={(e) => setForm({ ...form, projectDetails: e.target.value })}
-              />
-            </div>
-
-            {/* Submit Button */}
-            <Button
-              type="submit"
-              disabled={loading}
-              className="w-full bg-gradient-to-r from-blue-500 to-sky-600 hover:from-blue-600 hover:to-sky-700 text-white flex items-center justify-center gap-2"
-            >
-              {loading ? <Loader2 className="animate-spin w-5 h-5" /> : "Submit"}
-            </Button>
-          </form>
+                {loading ? <Loader2 className="animate-spin w-5 h-5" /> : "Submit"}
+              </Button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   );
 }

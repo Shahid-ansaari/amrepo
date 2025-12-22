@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast, Toaster } from "sonner";
 import { Loader2 } from "lucide-react";
+import Image from "next/image";
 
 export default function ContactPopup() {
     const [open, setOpen] = useState(false);
@@ -69,6 +70,7 @@ export default function ContactPopup() {
             toast.success("Thank you! We received your request.");
             setForm({ fullName: "", phone: "", email: "", product: "", projectDetails: "" });
             closePopup();
+            
         } catch (err) {
             console.error(err);
             toast.error("Something went wrong. Please try again.");
@@ -98,6 +100,12 @@ export default function ContactPopup() {
                     >
                         ×
                     </button>
+                    <Image
+                                 width={1000}
+                                  height={1000}
+                                  src="/logo.png"
+                                  alt="Contact Illustration"
+                                  className="object-cover  w-40  m-auto py-3"/>
 
                     <h2 className="text-2xl font-bold mb-2 text-sky-900 text-center">Contact / Get a Quote</h2>
                     <p className="text-gray-600 mb-5 text-center">Share your requirements and we’ll contact you shortly.</p>

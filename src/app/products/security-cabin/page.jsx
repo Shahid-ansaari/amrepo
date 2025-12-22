@@ -17,10 +17,12 @@ export default function SecurityGuardCabinPage() {
     images: [
       "/assets/products/security/gaurd2.jpg",
       "/assets/products/security/security14.jpg",
+      "/assets/products/security/security-cabin-062025.jpg",
       "/assets/products/security/security9.jpg",
       "/assets/products/security/security10.jpg",
       "/assets/products/security/security11.jpg",
       "/assets/products/security/security12.jpg",
+      "/assets/products/security/security-cabin-062025.jpg",
       
     ],
     features: [
