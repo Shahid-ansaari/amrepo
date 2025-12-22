@@ -226,7 +226,7 @@ export default function MobileMenu({ onClose }) {
           </a>
 
           <a href="mailto:info@amoffices.in" className="contact-item font-medium">
-            <Mail size={20} /> info@amofficegroup.in
+            <Mail size={20} /> info@amoffices.in
           </a>
 
           <a href="https://wa.me/9266722472" className="contact-item font-medium">
