@@ -282,7 +282,8 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState , useRef, useEffect } from "react";
+import Link from "next/link";
 import axios from "axios";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -295,6 +296,76 @@ import ContactButtons from "@/components/ContactButtons";
 import ConnectWithUs from "@/components/ConnectWithUs";
 
 export default function ContactPage() {
+
+
+
+
+  // start fror main 
+    const heroRef = useRef(null);
+    const imgRef = useRef(null);
+    const [isSmall, setIsSmall] = useState(false);
+  
+    // Replace this with your image path (use next/image optimized images)
+    const heroSrc = "/assets/about/about6.jpg"; // change file to your asset
+  
+    const headline = "North India Leading in Prefabricated & Portable cabins";
+    const subheading =
+      "Fast deployment, robust build and turnkey interiors for offices, security posts, farmhouses and labour colonies.";
+  
+    useEffect(() => {
+      // Detect small screens -> disable parallax
+      const mq = window.matchMedia("(max-width: 768px)");
+      const handle = () => setIsSmall(mq.matches);
+      handle();
+      mq.addEventListener ? mq.addEventListener("change", handle) : mq.addListener(handle);
+  
+      return () => {
+        mq.removeEventListener ? mq.removeEventListener("change", handle) : mq.removeListener(handle);
+      };
+    }, []);
+  
+    useEffect(() => {
+      if (isSmall) {
+        // Reset transform on mobile
+        if (imgRef.current) imgRef.current.style.transform = "translateY(0px)";
+        return;
+      }
+  
+      let rafId = null;
+  
+      const onScroll = () => {
+        if (!heroRef.current || !imgRef.current) return;
+        const rect = heroRef.current.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        // Calculate how far hero is from the top (negative if scrolled past)
+        // We'll map visible portion to a small translateY value
+        // When hero top is 0 -> translate = 0; when hero top is -200 -> translate small amount
+        const visible = Math.max(0, Math.min(rect.height, windowHeight - rect.top));
+        // Use rect.top to compute a factor
+        const factor = (rect.top / windowHeight) * 0.2; // small factor
+        const translateY = Math.round(-factor * 50); // max ~ +/- 10-20px (tweak)
+        // Smooth via requestAnimationFrame
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(() => {
+          if (imgRef.current) imgRef.current.style.transform = `translateY(${translateY}px)`;
+        });
+      };
+  
+      // initial apply
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", onScroll);
+  
+      return () => {
+        if (rafId) cancelAnimationFrame(rafId);
+        window.removeEventListener("scroll", onScroll);
+        window.removeEventListener("resize", onScroll);
+      };
+    }, [isSmall]);
+
+
+    // end 
+  
   const [form, setForm] = useState({
     fullName: "",
     phone: "",
@@ -325,6 +396,61 @@ export default function ContactPage() {
 
   return (
     <div>
+      {/* HERO */}
+      <section
+        ref={heroRef}
+        className="relative overflow-hidden"
+        aria-label="About hero"
+        style={{ height: "50vh", minHeight: "320px" }} // 45vh
+      >
+        {/* Background image placed absolutely and moved with transform */}
+        <div className="absolute inset-0  -z-10">
+          <div className="w-full h-full relative">
+            <Image
+              ref={imgRef}
+              src={heroSrc}
+              alt="Modular prefabricated cabins - hero"
+              fill
+              style={{ objectFit: "cover", transform: "translateY(0px)", transition: "transform 0.12s linear" }}
+              sizes="(max-width: 768px) 100vw, 1200px"
+              priority
+              className=""
+            />
+            {/* subtle gradient overlay for contrast */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/45 to-black/40 pointer-events-none" />
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 h-full flex items-center">
+          <div className="w-full md:w-3/4 lg:w-2/3 text-center md:text-left">
+            {/* <p className="text-sm text-white/80 uppercase tracking-wider mb-2">Trusted · Durable · Quick to deploy</p> */}
+            <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight drop-shadow-md">
+              {headline}
+            </h1>
+            {/* <p className="mt-3 text-white/90 max-w-2xl text-sm sm:text-base">
+              {subheading}
+            </p> */}
+{/* 
+            <div className="mt-6 flex justify-center md:justify-start gap-3">
+              <Link href="/contact" className="inline-block">
+                <button className="px-5 py-3 rounded-full bg-gradient-to-r from-sky-600 to-indigo-600 text-white font-semibold shadow-lg hover:scale-[1.02] transition-transform">
+                  Get a Free Quote
+                </button>
+              </Link>
+            </div> */}
+          </div>
+        </div>
+
+        {/* Scroll hint (small down arrow) */}
+        <div className="absolute left-1/2 -translate-x-1/2 bottom-4 z-20">
+          <div className="text-white/80 animate-bounce py-1 px-2 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+        </div>
+      </section>
       <div className="bg-sky-100 min-h-screen flex items-center justify-center p-4">
         {/* Sonner Toaster */}
         <Toaster position="top-right" richColors closeButton />
@@ -344,15 +470,15 @@ export default function ContactPage() {
 
           {/* Right Form */}
           <div className="w-full md:w-1/2 p-8 flex flex-col justify-center">
-          <div   className=" flex ">
-            <Image
-             width={1000}
-              height={1000}
-              src="/logo.png"
-              alt="Contact Illustration"
-              className="object-cover  w-40 "/>
+            <div className=" flex ">
+              <Image
+                width={1000}
+                height={1000}
+                src="/logo.png"
+                alt="Contact Illustration"
+                className="object-cover  w-40 " />
 
-          </div>
+            </div>
             <h2 className="text-3xl font-bold mb-3 text-sky-900">Contact / Get a Quote</h2>
             <p className="text-gray-600 mb-6">Share your requirements and we’ll respond with options and pricing.</p>
 

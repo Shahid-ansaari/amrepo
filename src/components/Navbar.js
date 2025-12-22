@@ -291,6 +291,7 @@ export default function Navbar() {
       {/* {menuOpen && <MobileMenu />} */}
       {/* {menuOpen && <MobileMenu onClose={() => setMenuOpen(false)} />} */}
       {menuOpen && <MobileMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />}
+        
 
     </header>
   );
