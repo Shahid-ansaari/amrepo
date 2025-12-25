@@ -19,6 +19,7 @@ const IMAGES = [
     { id: 2, category: "Portable Office", src: "/assets/products/office/office1.jpg", alt: "Portable Office 2" },
     { id: 3, category: "Security Cabin", src: "/assets/products/security/gaurd5.png", alt: "Security Cabin 1" }, 
     { id: 4, category: "Security Cabin", src: "/assets/products/security/security9.jpg", alt: "Security Cabin 2" },
+    { id: 5, category: "portable Cabin", src: "/assets/products/cabin/cabin2312.jpeg", alt: "portable Cabin 2312" },
     { id: 5, category: "Portable Cabin", src: "/assets/products/cabin/cabin2.jpg", alt: "Portable Cabin 1" },
     { id: 6, category: "Portable Cabin", src: "/assets/products/cabin/cabin1.jpg", alt: "Portable Cabin 2" },
     { id: 9, category: "Accommodation Cabin", src: "/assets/products/accomondation/accomondation3.jpg", alt: "Accommodation Cabin 1" },
@@ -29,6 +30,7 @@ const IMAGES = [
     { id: 10, category: "Accommodation Cabin", src: "/assets/products/accomondation/accommodation4.jpeg", alt: "Accommodation Cabin 2" },
     { id: 14, category: "Security Cabin", src: "/assets/products/security/security-cabin-062025.jpg", alt: "Security Cabin 1" }, 
     { id: 15, category: "Security Cabin", src: "/assets/products/security/security-cabin 062025-2.jpg", alt: "Security Cabin 1" },
+    
     
     
 ];

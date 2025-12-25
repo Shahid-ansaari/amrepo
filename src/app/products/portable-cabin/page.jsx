@@ -15,6 +15,7 @@ export default function PortableCabinsPage() {
     subtitle: "Flexible, durable cabins",
     mainImage: "/assets/products/cabin/cabin3.jpg",
     images: [
+      "/assets/products/cabin/cabin2312.jpeg", 
       "/assets/products/cabin/cabin2.jpg",
       "/assets/hero/modular homes.jpg",
       "/assets/hero/products/cabins/cabinp1.jpg",

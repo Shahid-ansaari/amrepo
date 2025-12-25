@@ -272,7 +272,7 @@ export default function AboutPage({ openPopup }) {
         {/* Company Logo */}
         <div className="mb-6">
           <Image
-            src="/assets/logo.png" // temporary logo — replace later
+            src="/logo.png" // temporary logo — replace later
             alt="AM Office Solution Logo"
             width={260}
             height={260}

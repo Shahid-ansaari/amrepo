@@ -90,13 +90,13 @@ export default function ContactPopup() {
                 onClick={closePopup}>
 
                 {/* Popup Card */}
-                <div className="bg-white rounded-lg shadow-2xl max-w-lg w-full p-6 relative animate-slide-up"
+                <div className="bg-white rounded-lg shadow-2xl max-w-lg w-full p-6 mt-2 relative animate-slide-up"
                     onClick={(e) => e.stopPropagation()}>
 
                     {/* Close Button */}
                     <button
                         onClick={closePopup}
-                        className="absolute top-3 right-3 text-gray-500 hover:text-black text-2xl"
+                        className="absolute top-7 right-7 text-gray-500 hover:text-black text-2xl"
                     >
                         ×
                     </button>
