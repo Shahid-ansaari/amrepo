@@ -20,53 +20,74 @@ const geistMono = Geist_Mono({
 //   description: "Welcome To Am Office Solutions , we provide portable cabins , offices , portable toilets",
 // };
 export const metadata = {
-  title: "AM Office Solutions | Premium Portable Office Solutions, Guard Rooms & Cafes",
-  description: "Welcome to AM Office Solutions, offering premium portable cabins, offices, security guard rooms, modular homes, container cafes, and more. Customizable and eco-friendly solutions with fast delivery across India.",
-  keywords: "portable office cabins, modular homes, security guard rooms, container cafes, prefab solutions, office cabins, portable houses, portable workspaces, AM Office Solutions",
+  title:
+    "AM Office Solutions |  Portable Office Solutions, Guard Rooms & Cafes",
+  description:
+    "Welcome to AM Office Solutions, offering premium portable cabins, offices, security guard rooms, portable toilets, modular homes, container cafes, and more. Customizable and eco-friendly solutions with fast delivery across India.",
+  keywords:
+    "portable office cabins,portable toilets, modular homes, security guard rooms, container cafes, prefab solutions, office cabins, portable houses, portable workspaces, AM Office Solutions",
   author: "AM Office Solutions",
   robots: "index, follow",
   alternates: {
-      canonical: "https://www.amoffices.in/", // ← ✅ Canonical tag here
-    },
+    canonical: "https://www.amoffices.in/", // ← ✅ Canonical tag here
+  },
   openGraph: {
-    title: "AM Office Solutions - Premium Portable Office Solutions, Guard Rooms & Cafes",
-    description: "Explore AM Office Solutions for high-quality portable office cabins, security guard rooms, modular homes, and cafes. Customizable, weather-resistant, and fast delivery across India.",
+    title:
+      "AM Office Solutions - Premium Portable Office Solutions, Guard Rooms & Cafes",
+    description:
+      "Explore AM Office Solutions for high-quality portable office cabins, security guard rooms, modular homes, and cafes. Customizable, weather-resistant, and fast delivery across India.",
     image: "/logo.png", // Replace with actual image URL
     url: "https://www.amoffices.in",
-    site_name: "AM Office Solutions"
+    site_name: "AM Office Solutions",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AM Office Solutions - Premium Portable Office Solutions, Guard Rooms & Cafes",
-    description: "Premium portable office solutions, guard rooms, modular homes, and container cafes. Fast delivery, customizable, and eco-friendly construction.",
+    title:
+      "AM Office Solutions - Premium Portable Office Solutions, Guard Rooms & Cafes",
+    description:
+      "Premium portable office solutions, guard rooms, modular homes, and container cafes. Fast delivery, customizable, and eco-friendly construction.",
     image: "/logo.png", // Replace with actual image URL
   },
 };
 
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-    <Head>
-       <script type="application/ld+json">
-        {`
-        {
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "AM Office Solutions",
-          "url": "https://www.amoffices.in",
-          "logo": "https://www.amoffices.in/logo.png",
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+91 9266722472",
-            "contactType": "Customer Service"
-          }
-        }
-        `}
-      </script>
+      <head>
+        {/* WebSite Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "AM Office Solutions",
+              alternateName: "AM Offices",
+              url: "https://www.amoffices.in",
+            }),
+          }}
+        />
 
-    </Head>
-      
+        {/* Organization Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "AM Office Solutions",
+              url: "https://www.amoffices.in",
+              logo: "https://www.amoffices.in/logo.png",
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+91-9266722472",
+                contactType: "customer service",
+              },
+            }),
+          }}
+        />
+      </head>
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased  relative`}
       >
@@ -74,7 +95,6 @@ export default function RootLayout({ children }) {
         {children}
         <ContactPopup />
         <Footer />
-
       </body>
     </html>
   );
