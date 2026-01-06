@@ -24,7 +24,7 @@ export default function FeatureGrid() {
       step: "4",
       title: "(100% Payment)",
       desc: "Final installations.",
-      img: "/assets/process/ico/install.png",
+      img: "/assets/process/ico/final-intallation.png",
 
     }, {
       step: "5",

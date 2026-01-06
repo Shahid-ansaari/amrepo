@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Phone, Mail, MapPin, MessageCircle, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Phone, Mail, MapPin, MessageCircle, Facebook, Instagram, Linkedin,Youtube  } from "lucide-react";
+
 
 export default function Footer() {
   return (
@@ -69,14 +70,17 @@ export default function Footer() {
         <div>
           <h3 className="text-white font-semibold text-lg mb-4">Follow Us</h3>
           <div className="flex gap-4 mt-2">
-            <a href="#" className="p-2 bg-gray-800 rounded-full hover:bg-gray-700 transition">
+            <a href="https://www.facebook.com/people/AM-Office-Delhi/61585579305065/" target="_blank" className="p-2 bg-gray-800 rounded-full hover:bg-gray-700 transition">
               <Facebook className="w-5 h-5" />
             </a>
-            <a href="#" className="p-2 bg-gray-800 rounded-full hover:bg-gray-700 transition">
+            <a href="https://www.instagram.com/am_office1" target="_blank" className="p-2 bg-gray-800 rounded-full hover:bg-gray-700 transition">
               <Instagram className="w-5 h-5" />
             </a>
-            <a href="#" className="p-2 bg-gray-800 rounded-full hover:bg-gray-700 transition">
+            <a href="#"  target="_blank" className="p-2 bg-gray-800 rounded-full hover:bg-gray-700 transition">
               <Linkedin className="w-5 h-5" />
+            </a> 
+            <a href="https://www.youtube.com/@AMOffices" target="_blank" className="p-2 bg-gray-800 rounded-full hover:bg-gray-700 transition">
+              <Youtube  className="w-5 h-5" />
             </a>
           </div>
         </div>

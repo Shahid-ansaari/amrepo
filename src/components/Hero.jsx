@@ -1,10 +1,4 @@
-
-
-
-
-
-
-// fully responsive for all devices 
+// fully responsive for all devices
 "use client";
 import { useState } from "react";
 import Link from "next/link";
@@ -12,9 +6,9 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight, ArrowRight, Phone } from "lucide-react";
 import { useSwipeable } from "react-swipeable";
 import { HoverBorderGradient } from "./ui/hover-border-gradient";
+import AnnouncementBar from "./AnnouncementBar";
 
 // first: "Prefabricated Modular",
-
 
 // Slide data
 const slides = [
@@ -23,8 +17,7 @@ const slides = [
     alt: "Portable Office Cabin",
     first: "Premium Portable Solutions for",
     headline: "Offices, Security Cabins, Cafes & Houses",
-    subheadline:
-      "We create smart and movable workspace for every need.",
+    subheadline: "We create smart and movable workspace for every need.",
   },
   {
     image: "/assets/hero/siteoffice.jpg",
@@ -71,8 +64,7 @@ const slides = [
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const nextSlide = () =>
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
 
   const prevSlide = () =>
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
@@ -88,8 +80,9 @@ export default function HeroSection() {
       {...handlers}
       className="relative   w-full min-h-[79vh] md:h-[87vh] overflow-hidden bg-[#e2f1ff] sm:bg-[#00162B] "
     >
-      <div className=" hidden md:block">
+      <AnnouncementBar />
 
+      <div className=" hidden md:block">
         <div className="absolute inset-0">
           <div className="absolute top-[-80px] left-[-80px] w-[350px] h-[350px] bg-blue-500/85 rounded-full blur-[140px]" />
 
@@ -99,7 +92,6 @@ export default function HeroSection() {
           <div className="absolute -top-20 -left-20 w-96 h-96 bg-amber-500/10 rounded-full blur-[140px]"></div>
           <div className="absolute top-1/3 right-0 w-[28rem] h-[28rem] sm:bg-violet-500/65 rounded-full blur-[150px]"></div>
           <div className="absolute bottom-0 left-1/4 w-[22rem] h-[22rem] bg-indigo-400/50 rounded-full blur-[120px]"></div>
-
         </div>
       </div>
       <div className=" sm:hidden">
@@ -122,7 +114,6 @@ export default function HeroSection() {
           <div className="absolute bottom-0 left-1/4 w-[22rem] h-[22rem] bg-slate-50 rounded-full blur-[120px]"></div> */}
         </div>
       </div>
-
 
       {/* Video Background - Desktop */}
       {/* <div className="absolute inset-0 hidden md:block">
@@ -156,10 +147,11 @@ export default function HeroSection() {
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 text-sky-950 -mt-15 flex flex-col-reverse md:flex-row items-center  justify-center px-3 sm:px-6 md:px-12 lg:px-20 transition-all duration-700 ${index === currentSlide
-            ? "opacity-100 translate-x-0 z-20"
-            : "opacity-0 translate-x-full z-0"
-            }`}
+          className={`absolute inset-0 text-sky-950 -mt-15 flex flex-col-reverse md:flex-row items-center  justify-center px-3 sm:px-6 md:px-12 lg:px-20 transition-all duration-700 ${
+            index === currentSlide
+              ? "opacity-100 translate-x-0 z-20"
+              : "opacity-0 translate-x-full z-0"
+          }`}
         >
           {/* Text Section */}
           <div className="md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left text-sky-950 sm:text-white space-y-3 animate-slideInLeft">
@@ -183,15 +175,17 @@ export default function HeroSection() {
                 className=" flex items-center shadow-inner shadow-lg justify-center gap-2 border border-[#d6e9ff] hover:border-white sm:bg-[#040c2977] hover:bg-[#050028] hover:scale-105 px-6 py-1 rounded-md text-lg font-semibold transition-all"
               >
                 Get Quote
-                <ArrowRight size={16}/>
+                <ArrowRight size={16} />
               </Link>
               <Link
                 href="tel:+919266722472"
                 className=" flex items-center shadow-inner  shadow-lg  justify-center gap-2 border border-[#d6e9ff] hover:border-white sm:bg-[#040c2977] hover:bg-[#050028] hover:scale-105 px-6 py-1 rounded-md text-lg font-semibold transition-all"
               >
-                <span className=""><Phone size={15} /></span> Call Now
+                <span className="">
+                  <Phone size={15} />
+                </span>{" "}
+                Call Now
               </Link>
-
             </div>
           </div>
 
@@ -214,8 +208,6 @@ export default function HeroSection() {
               className="w-full h-full object-cover scale-135 origin-center"
             />
           </div>
-
-
         </div>
       ))}
 
@@ -257,10 +249,11 @@ export default function HeroSection() {
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={` cursor-pointer hover:bg-sky-100 md:w-3 md:h-3 w-2 h-2 rounded-full transition-all ${currentSlide === index
-              ? "bg-gradient-to-r from-sky-900 sm:from-[#8ac3ff] to-blue-900 sm:to-[#c7e1ff] scale-125"
-              : "sm:bg-white/40 bg-slate-500"
-              }`}
+            className={` cursor-pointer hover:bg-sky-100 md:w-3 md:h-3 w-2 h-2 rounded-full transition-all ${
+              currentSlide === index
+                ? "bg-gradient-to-r from-sky-900 sm:from-[#8ac3ff] to-blue-900 sm:to-[#c7e1ff] scale-125"
+                : "sm:bg-white/40 bg-slate-500"
+            }`}
           />
         ))}
       </div>
