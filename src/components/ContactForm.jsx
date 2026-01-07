@@ -435,9 +435,19 @@ export default function ContactPage() {
     setLoading(true);
 
     try {
-      await axios.post("https://am-backend-2968.onrender.com/api/leads", form, {
-        headers: { "Content-Type": "application/json" },
+      const response = await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json' 
+        },
+        body: JSON.stringify(form)
       });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Something went wrong');
+      }
 
       toast.success("Thank you! We received your request.");
       setForm({ fullName: "", phone: "", email: "", product: "", projectDetails: "" });
