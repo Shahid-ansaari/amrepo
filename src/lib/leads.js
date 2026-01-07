@@ -2,6 +2,7 @@
 import prisma from './prisma';
 
 
+
 // Fetch all persons from the database
 export async function getAllLeads() {
   try {
