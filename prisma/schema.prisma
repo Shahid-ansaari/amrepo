@@ -6,13 +6,14 @@
 
 generator client {
   provider = "prisma-client-js"
-  url = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
+  
   
 }
 
 datasource db {
   provider = "postgresql"
+  
+  
    
 }
 
@@ -29,15 +30,75 @@ model User {
 }
 
 
+// model Lead {
+//   id             String   @id @default(uuid())
+//   fullName       String   @map("full_name")
+//   phone          String
+//   email          String?
+//   product        String
+//   projectDetails String?  @map("project_details")
+//   createdAt      DateTime @default(now()) @map("created_at")
+//   updatedAt      DateTime @updatedAt @map("updated_at")
+
+//   @@map("leads")
+// }
+
+
+
+
 model Lead {
   id             String   @id @default(uuid())
   fullName       String   @map("full_name")
   phone          String
   email          String?
-  product        String
+  product        String?
   projectDetails String?  @map("project_details")
+  
+  // NEW FIELDS TO ADD:
+  status         String   @default("new")  // new, contacted, qualified, lost
+  priority       String   @default("medium") // hot, warm, cold
+  source         String?  // website, whatsapp, referral, phone
+  assignedTo     String?  @map("assigned_to") // employee email/id
+  dealValue      Float?   @map("deal_value") // expected revenue
+  lastContacted  DateTime? @map("last_contacted")
+  followUpDate   DateTime? @map("follow_up_date")
+  
+  // Relations
+  notes          LeadNote[]
+  activities     LeadActivity[]
+  
   createdAt      DateTime @default(now()) @map("created_at")
   updatedAt      DateTime @updatedAt @map("updated_at")
 
   @@map("leads")
+  @@index([status])
+  @@index([assignedTo])
+  @@index([createdAt])
+}
+
+// NEW MODEL: For notes/comments
+model LeadNote {
+  id        String   @id @default(uuid())
+  leadId    String   @map("lead_id")
+  lead      Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  note      String
+  createdBy String   @map("created_by") // employee who wrote note
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("lead_notes")
+  @@index([leadId])
+}
+
+// NEW MODEL: For activity tracking
+model LeadActivity {
+  id           String   @id @default(uuid())
+  leadId       String   @map("lead_id")
+  lead         Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  activityType String   @map("activity_type") // call, email, whatsapp, status_change
+  description  String
+  createdBy    String   @map("created_by")
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  @@map("lead_activities")
+  @@index([leadId])
 }
