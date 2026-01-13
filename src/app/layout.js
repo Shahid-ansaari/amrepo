@@ -21,6 +21,9 @@ const geistMono = Geist_Mono({
 //   description: "Welcome To Am Office Solutions , we provide portable cabins , offices , portable toilets",
 // };
 export const metadata = {
+   icons: {
+    icon: '/favicon.ico'
+  },
   title:
     "AM Office Solutions |  Portable Office Solutions, Guard Rooms & Cafes",
   description:
@@ -55,6 +58,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="48x48" type="image/x-icon" />
         {/* <!-- Google Tag Manager --> */}
         <Script id="gtm-init" strategy="afterInteractive">
           {`
