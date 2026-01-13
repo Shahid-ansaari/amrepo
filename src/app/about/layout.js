@@ -5,14 +5,14 @@ import { Toaster } from "sonner";
 
 export const metadata = {
 
-  title: "Contact Us - AM Office",
-  description: "Get in touch with AM Offices",
+  title: "About Us - AM Office",
+  description: "Learn more about AM Offices",
   keywords:
     "portable office cabins,portable toilets, modular homes, security guard rooms, container cafes, prefab solutions, office cabins, portable houses, portable workspaces, AM Office Solutions",
   author: "AM Office Solutions",
   robots: "index, follow",
   alternates: {
-    canonical: "https://www.amoffices.in/contact", // ← ✅ Canonical tag here
+    canonical: "https://www.amoffices.in/about", // ← ✅ Canonical tag here
   },
 };
 
@@ -21,8 +21,8 @@ export default function AppLayout({ children }) {
     <>
       <Toaster position="top-right" richColors closeButton />
       {children}
-      <MapSection />
-      <ConnectWithUs />
+      {/* <MapSection />
+      <ConnectWithUs /> */}
     </>
   );
 }

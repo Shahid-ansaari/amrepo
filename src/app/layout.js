@@ -1,10 +1,10 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Head from "next/head";
+
 import ContactPopup from "@/components/ContactPopup";
-import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,8 +21,8 @@ const geistMono = Geist_Mono({
 //   description: "Welcome To Am Office Solutions , we provide portable cabins , offices , portable toilets",
 // };
 export const metadata = {
-   icons: {
-    icon: '/favicon.ico'
+  icons: {
+    icon: "/favicon.ico",
   },
   title:
     "AM Office Solutions |  Portable Office Solutions, Guard Rooms & Cafes",
@@ -40,7 +40,7 @@ export const metadata = {
       "AM Office Solutions - Premium Portable Office Solutions, Guard Rooms & Cafes",
     description:
       "Explore AM Office Solutions for high-quality portable office cabins, security guard rooms, modular homes, and cafes. Customizable, weather-resistant, and fast delivery across India.",
-    image: "/logo.png", // Replace with actual image URL
+    image: "https://www.amoffices.in/logo.png", // Replace with actual image URL
     url: "https://www.amoffices.in",
     site_name: "AM Office Solutions",
   },
@@ -50,15 +50,201 @@ export const metadata = {
       "AM Office Solutions - Premium Portable Office Solutions, Guard Rooms & Cafes",
     description:
       "Premium portable office solutions, guard rooms, modular homes, and container cafes. Fast delivery, customizable, and eco-friendly construction.",
-    image: "/logo.png", // Replace with actual image URL
+    image: "https://www.amoffices.in/logo.png", // Replace with actual image URL
   },
 };
+// LocalBusiness Schema (If you have a physical location)
+// 
+{/* <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      name: "AM Office Solutions",
+      image: "https://www.amoffices.in/logo.png",
+      "@id": "https://www.amoffices.in",
+      url: "https://www.amoffices.in",
+      telephone: "+91-9266722472",
+      priceRange: "$$",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Your Street Address",
+        addressLocality: "Greater Noida",
+        addressRegion: "UP",
+        postalCode: "Your Pincode",
+        addressCountry: "IN"
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: "YOUR_LATITUDE",
+        longitude: "YOUR_LONGITUDE"
+      },
+      openingHoursSpecification: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        opens: "09:00",
+        closes: "18:00"
+      }
+    }),
+  }}
+/> */}
+
+
+// BreadcrumbList Schema (Add to each page)
+// javascript// Add this to your product/service pages
+// <script
+//   type="application/ld+json"
+//   dangerouslySetInnerHTML={{
+//     __html: JSON.stringify({
+//       "@context": "https://schema.org",
+//       "@type": "BreadcrumbList",
+//       itemListElement: [
+//         {
+//           "@type": "ListItem",
+//           position: 1,
+//           name: "Home",
+//           item: "https://www.amoffices.in"
+//         },
+//         {
+//           "@type": "ListItem",
+//           position: 2,
+//           name: "Products",
+//           item: "https://www.amoffices.in/products"
+//         },
+//         {
+//           "@type": "ListItem",
+//           position: 3,
+//           name: "Portable Cabins",
+//           item: "https://www.amoffices.in/products/portable-cabins"
+//         }
+//       ]
+//     }),
+//   }}
+// />
+
+
+
+// 3. Product Schema (For individual products)
+// javascript// Add this to product detail pages
+// <script
+//   type="application/ld+json"
+//   dangerouslySetInnerHTML={{
+//     __html: JSON.stringify({
+//       "@context": "https://schema.org",
+//       "@type": "Product",
+//       name: "Portable Office Cabin",
+//       image: "https://www.amoffices.in/products/cabin-image.jpg",
+//       description: "High-quality portable office cabin with modern amenities",
+//       brand: {
+//         "@type": "Brand",
+//         name: "AM Office Solutions"
+//       },
+//       offers: {
+//         "@type": "Offer",
+//         url: "https://www.amoffices.in/products/portable-cabin",
+//         priceCurrency: "INR",
+//         price: "150000",
+//         availability: "https://schema.org/InStock",
+//         seller: {
+//           "@type": "Organization",
+//           name: "AM Office Solutions"
+//         }
+//       }
+//     }),
+//   }}
+// />
+// 4. FAQPage Schema (If you have FAQ section)
+// javascript<script
+//   type="application/ld+json"
+//   dangerouslySetInnerHTML={{
+//     __html: JSON.stringify({
+//       "@context": "https://schema.org",
+//       "@type": "FAQPage",
+//       mainEntity: [
+//         {
+//           "@type": "Question",
+//           name: "What are portable office cabins?",
+//           acceptedAnswer: {
+//             "@type": "Answer",
+//             text: "Portable office cabins are prefabricated structures that can be easily transported and installed at different locations."
+//           }
+//         },
+//         {
+//           "@type": "Question",
+//           name: "How long does delivery take?",
+//           acceptedAnswer: {
+//             "@type": "Answer",
+//             text: "We provide fast delivery across India, typically within 7-14 days depending on location."
+//           }
+//         }
+//       ]
+//     }),
+//   }}
+// />
+// 5. Service Schema (For your services)
+// javascript<script
+//   type="application/ld+json"
+//   dangerouslySetInnerHTML={{
+//     __html: JSON.stringify({
+//       "@context": "https://schema.org",
+//       "@type": "Service",
+//       serviceType: "Portable Office Solutions",
+//       provider: {
+//         "@type": "Organization",
+//         name: "AM Office Solutions"
+//       },
+//       areaServed: {
+//         "@type": "Country",
+//         name: "India"
+//       },
+//       hasOfferCatalog: {
+//         "@type": "OfferCatalog",
+//         name: "Portable Office Solutions",
+//         itemListElement: [
+//           {
+//             "@type": "Offer",
+//             itemOffered: {
+//               "@type": "Service",
+//               name: "Portable Office Cabins"
+//             }
+//           },
+//           {
+//             "@type": "Offer",
+//             itemOffered: {
+//               "@type": "Service",
+//               name: "Security Guard Rooms"
+//             }
+//           }
+//         ]
+//       }
+//     }),
+//   }}
+// />
+
+
+
+// 9. Add Review/Rating Schema (if you have reviews)
+// javascript<script
+//   type="application/ld+json"
+//   dangerouslySetInnerHTML={{
+//     __html: JSON.stringify({
+//       "@context": "https://schema.org",
+//       "@type": "Organization",
+//       name: "AM Office Solutions",
+//       aggregateRating: {
+//         "@type": "AggregateRating",
+//         ratingValue: "4.8",
+//         reviewCount: "127"
+//       }
+//     }),
+//   }}
+// />
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="48x48" type="image/x-icon" />
         {/* <!-- Google Tag Manager --> */}
         <Script id="gtm-init" strategy="afterInteractive">
           {`
@@ -110,10 +296,20 @@ export default function RootLayout({ children }) {
               name: "AM Office Solutions",
               url: "https://www.amoffices.in",
               logo: "https://www.amoffices.in/logo.png",
+              description: "Premium portable office and cabin solutions provider",
+              address: {
+                "@type": "PostalAddress",
+                addressCountry: "IN",
+              },
+              sameAs: [
+                "https://www.facebook.com/people/AM-Office-Delhi/61585579305065/",
+                "https://www.linkedin.com/company/amoffices",
+              ],
               contactPoint: {
                 "@type": "ContactPoint",
                 telephone: "+91-9266722472",
                 contactType: "customer service",
+                availableLanguage: ["en", "hi"],
               },
             }),
           }}
