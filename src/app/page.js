@@ -36,6 +36,8 @@ export default function Home() {
       </div>
       {/* <WhyChooseGlass/> */}
       <ChooseUs />
+      <ContactForm/>
+
       <TrustIndicators />
       <ProductGrid />
       <TrustedPartners />
