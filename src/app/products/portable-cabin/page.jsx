@@ -83,7 +83,21 @@ export default function PortableCabinsPage() {
     setSuccess("");
     setError("");
     try {
-      await axios.post(API_ENDPOINT, form, { headers: { "Content-Type": "application/json" } });
+      // await axios.post(API_ENDPOINT, form, { headers: { "Content-Type": "application/json" } });
+      const response = await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json' 
+        },
+        body: JSON.stringify(form)
+      });
+      const data = await response.json();
+       if (!response.ok) {
+        throw new Error(data.error || 'Something went wrong');
+      }
+
+      toast.success("Thank you! We received your request.");
+
       setSuccess("Thank you — we've received your request. Our team will contact you shortly.");
       setForm({ fullName: "", phone: "", email: "", product: product.name, projectDetails: "" });
     } catch (err) {
