@@ -593,7 +593,7 @@ export default function AdminLeadsPage() {
                           </span> */}
                         </div>
                       </div>
-                      <div className="flex gap-1">
+                      {/* <div className="flex gap-1">
                         <button
                           onClick={() => openEditModal(lead)}
                           className="w-8 h-8 flex items-center justify-center bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors"
@@ -606,7 +606,7 @@ export default function AdminLeadsPage() {
                         >
                           <Trash2 className="w-4 h-4" />
                         </button>
-                      </div>
+                      </div> */}
                     </div>
 
                     <div className="space-y-2 mb-3">
