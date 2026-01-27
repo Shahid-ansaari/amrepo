@@ -469,13 +469,24 @@ export default function ContactPage() {
 
           {/* Left Illustration */}
           <div className="hidden md:block md:w-1/2 relative">
+          
+          <div>
+            <Image
+             width={1000}
+             height={1000}
+             src="/form1.png" 
+             alt="Contact Illustration"
+             className="object-cover w-full h-full"
+           />
             <Image
               width={1000}
               height={1000}
-              src="/assets/hero/a.jpg"
+              src="/form2.png"
               alt="Contact Illustration"
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-full "
             />
+
+          </div>
           </div>
 
           {/* Right Form */}

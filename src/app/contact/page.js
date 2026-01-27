@@ -709,7 +709,7 @@ export default function ContactPage() {
               style={{ objectFit: "cover", transform: "translateY(0px)", transition: "transform 0.12s linear" }}
               sizes="(max-width: 768px) 100vw, 1200px"
               priority
-            />
+            />    
             <div className="absolute inset-0 bg-gradient-to-b from-black/45 to-black/40 pointer-events-none" />
           </div>
         </div>
@@ -736,14 +736,24 @@ export default function ContactPage() {
 
         <div className="flex flex-col md:flex-row bg-white rounded-xl shadow-xl max-w-5xl w-full overflow-hidden">
           {/* Left Illustration */}
-          <div className="hidden md:block md:w-1/2 relative">
+          <div className="hidden md:block md:w-1/2 relative ">
+          <div>
+            <Image
+             width={1000}
+             height={1000}
+             src="/form1.png" 
+             alt="Contact Illustration"
+             className="object-cover w-full h-full"
+           />
             <Image
               width={1000}
               height={1000}
-              src="/assets/hero/a.jpg"
+              src="/form2.png"
               alt="Contact Illustration"
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-full "
             />
+
+          </div>
           </div>
 
           {/* Right Form */}

@@ -21,9 +21,9 @@ const geistMono = Geist_Mono({
 //   description: "Welcome To Am Office Solutions , we provide portable cabins , offices , portable toilets",
 // };
 export const metadata = {
-  icons: {
-    icon: "/favicon.ico",
-  },
+  // icons: {
+  //   icon: "/favicon.ico",
+  // },
   title:
     "AM Office Solutions |  Portable Office Solutions, Guard Rooms & Cafes",
   description:
@@ -54,8 +54,9 @@ export const metadata = {
   },
 };
 // LocalBusiness Schema (If you have a physical location)
-// 
-{/* <script
+//
+{
+  /* <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{
     __html: JSON.stringify({
@@ -88,8 +89,8 @@ export const metadata = {
       }
     }),
   }}
-/> */}
-
+/> */
+}
 
 // BreadcrumbList Schema (Add to each page)
 // javascript// Add this to your product/service pages
@@ -122,8 +123,6 @@ export const metadata = {
 //     }),
 //   }}
 // />
-
-
 
 // 3. Product Schema (For individual products)
 // javascript// Add this to product detail pages
@@ -222,8 +221,6 @@ export const metadata = {
 //   }}
 // />
 
-
-
 // 9. Add Review/Rating Schema (if you have reviews)
 // javascript<script
 //   type="application/ld+json"
@@ -296,7 +293,8 @@ export default function RootLayout({ children }) {
               name: "AM Office Solutions",
               url: "https://www.amoffices.in",
               logo: "https://www.amoffices.in/logo.png",
-              description: "Premium portable office and cabin solutions provider",
+              description:
+                "Premium portable office and cabin solutions provider",
               address: {
                 "@type": "PostalAddress",
                 addressCountry: "IN",
